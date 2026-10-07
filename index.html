@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#090b18" />
+    <title>FLAPPY NEXUS: SKYBREAK</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="gameCanvas"></canvas>
+
+      <div id="hud" class="hud hidden">
+        <div class="hud-top">
+          <div class="hud-stat">
+            <span>Score</span>
+            <strong id="scoreValue">0</strong>
+          </div>
+          <div class="hud-stat">
+            <span>Best</span>
+            <strong id="bestValue">0</strong>
+          </div>
+          <div class="hud-stat">
+            <span>Coins</span>
+            <strong id="coinValue">0</strong>
+          </div>
+          <div class="hud-stat">
+            <span>Combo</span>
+            <strong id="comboValue">x1</strong>
+          </div>
+        </div>
+
+        <div class="hud-bottom">
+          <div id="levelBadge">LEVEL 1</div>
+          <div id="powerUpBadge" class="powerup-badge hidden"></div>
+        </div>
+      </div>
+
+      <div id="missionTicker" class="mission-ticker hidden"></div>
+      <div id="toastContainer"></div>
+
+      <div id="menuScreen" class="screen active">
+        <div class="glass-panel main-panel">
+          <div class="title-wrap">
+            <p class="eyebrow">NEXUS FLIGHT SYSTEM</p>
+            <h1>FLAPPY NEXUS</h1>
+            <h2>SKYBREAK</h2>
+          </div>
+
+          <div class="menu-actions">
+            <button class="primary-btn" data-action="play">▶ PLAY</button>
+            <button data-action="modes">🎮 GAME MODES</button>
+            <button data-action="customize">🛠 CUSTOMIZE</button>
+            <button data-action="achievements">🏆 ACHIEVEMENTS</button>
+            <button data-action="stats">📊 STATISTICS</button>
+            <button data-action="settings">⚙ SETTINGS</button>
+            <button data-action="howto">❓ HOW TO PLAY</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="panelScreen" class="screen hidden">
+        <div class="glass-panel panel-shell">
+          <div class="panel-header">
+            <div id="panelTitle">Panel</div>
+            <button class="close-panel" data-action="close-panel">✕</button>
+          </div>
+          <div id="panelContent" class="panel-content"></div>
+        </div>
+      </div>
+
+      <div id="pauseScreen" class="screen hidden">
+        <div class="glass-panel small-panel">
+          <h3>PAUSED</h3>
+          <div class="menu-actions compact">
+            <button class="primary-btn" data-action="resume">RESUME</button>
+            <button data-action="restart">RESTART</button>
+            <button data-action="settings">SETTINGS</button>
+            <button data-action="menu">MAIN MENU</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="gameOverScreen" class="screen hidden">
+        <div class="glass-panel small-panel">
+          <h3>GAME OVER</h3>
+          <div id="gameOverSummary" class="summary-grid"></div>
+          <div class="menu-actions compact">
+            <button class="primary-btn" data-action="play-again">
+              ▶ PLAY AGAIN
+            </button>
+            <button data-action="menu">🏠 MAIN MENU</button>
+            <button data-action="stats">📊 STATISTICS</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
